@@ -5,7 +5,7 @@ body {
 
 body {
   padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: "Open Sans", sans-serif !important;
   font-size: 14px;
 }
 
@@ -227,6 +227,10 @@ form span.error {
 .nav-top > li > a {
   padding: 15px 10px;
 }
+/* Nova classe criada para esconder os elementos quando o carrinho estiver vazio */
+.info {
+  display: none;
+}
 
 @media (min-width: 992px) {
   .navbar-toggleable-md .navbar-nav .nav-link {
@@ -260,7 +264,7 @@ ul.nav > li.dropdown > ul > li:hover > .dropdown-menu {
 
 ul.nav > li.dropdown > ul > li > .icon::after {
   display: block;
-  content: ' ';
+  content: " ";
   float: right;
   width: 0;
   height: 0;
@@ -286,7 +290,7 @@ ul.nav > li.dropdown > ul > li > .icon::after {
 
 .navbar-dark .dropdown-menu.multi-level .dropdown > a::after {
   display: block;
-  content: '';
+  content: "";
   float: right;
   width: 0;
   height: 0;
@@ -518,10 +522,10 @@ ul#contact-list {
   margin-bottom: 15px;
 }
 
-.checkout-container .checkbox input[type='checkbox'],
-.checkout-container .checkbox-inline input[type='checkbox'],
-.checkout-container .radio input[type='radio'],
-.checkout-container .radio-inline input[type='radio'] {
+.checkout-container .checkbox input[type="checkbox"],
+.checkout-container .checkbox-inline input[type="checkbox"],
+.checkout-container .radio input[type="radio"],
+.checkout-container .radio-inline input[type="radio"] {
   margin-left: 0;
   margin-top: 3px;
 }
@@ -672,8 +676,20 @@ a.product_digital {
     overflow-x: hidden !important;
   }
 
-  #navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li.dropdown.open > ul > li.dropdown > ul,
-  #navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li.dropdown.open > ul > li.dropdown > ul > li > ul {
+  #navbar-collapse-1
+    > ul.nav.navbar-nav.navbar-right
+    > li.dropdown.open
+    > ul
+    > li.dropdown
+    > ul,
+  #navbar-collapse-1
+    > ul.nav.navbar-nav.navbar-right
+    > li.dropdown.open
+    > ul
+    > li.dropdown
+    > ul
+    > li
+    > ul {
     display: block;
     padding: 0 0 0 10px;
   }
@@ -783,16 +799,28 @@ a.product_digital {
   }
 
   #navbar-collapse-1 li.dropdown > a::after {
-    content: '\f0d7';
-    font-family: 'Font Awesome 5 Free';
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free";
     font-style: normal;
     font-weight: 900;
     text-decoration: inherit;
     padding-left: 0.5em;
   }
 
-  #navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li.dropdown.open > ul > li.dropdown > a::after,
-  #navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li.dropdown.open > ul > li.dropdown > ul > li > a::after {
+  #navbar-collapse-1
+    > ul.nav.navbar-nav.navbar-right
+    > li.dropdown.open
+    > ul
+    > li.dropdown
+    > a::after,
+  #navbar-collapse-1
+    > ul.nav.navbar-nav.navbar-right
+    > li.dropdown.open
+    > ul
+    > li.dropdown
+    > ul
+    > li
+    > a::after {
     display: none;
   }
 
@@ -868,7 +896,7 @@ footer ul.payment li span img {
 }
 
 footer ul.payment li span::before {
-  content: '';
+  content: "";
   width: 100px;
   height: 100px;
   background: #fff;
@@ -915,11 +943,11 @@ footer ul.payment li span::before {
 }
 
 .category_menu_list .count::before {
-  content: '(';
+  content: "(";
 }
 
 .category_menu_list .count::after {
-  content: ')';
+  content: ")";
 }
 
 .parent-2 {
@@ -1038,15 +1066,23 @@ footer ul.payment li span::before {
 
 /* Store Background | Default: #FFF */
 body {
-    background-color: #ffffff ;
-  }
-  
-  /* Navbar Background | Default: #222 */
-  .navbar-inverse {
-    background-color: #222222 ;
-    border-color: #222222;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    color: #222222;
-  }
-  .toast, .toast-success {background-color: #28a745;}
+  background-color: #ffffff;
+}
+
+/* Navbar Background | Default: #222 */
+.navbar-inverse {
+  background-color: #222222;
+  border-color: #222222;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222222;
+}
+.toast,
+.toast-success {
+  background-color: #28a745;
+}

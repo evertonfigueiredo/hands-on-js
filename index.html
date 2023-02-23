@@ -81,7 +81,7 @@
 
         <div class="col-lg-6">
             <!-- Formulário do produto -->
-          <form>
+          <div>
             <!-- Preço  -->
             <div class="form-group price_elem row">
               <label class="col-sm-3 col-md-3 form-control-label nopaddingtop"
@@ -117,7 +117,7 @@
                 >Color:</label
               >
               <div class="col-sm-8 col-md-9">
-                <select class="form-control prod-options">
+                <select class="form-control prod-options" id="corSelecionada">
                   <option value="cinza">
                     Cinza
                   </option>
@@ -134,7 +134,7 @@
               <div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-3">
 
                 <!-- Botão para adicionar ao carrinho -->
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" onclick="adicionarNovoProduto()">
                     Adicionar ao Carrinho
                 </button>
 
@@ -161,7 +161,7 @@
                 <p>Marca: Wacom</p>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -233,7 +233,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- Formulario de Login -->
-                    <form>
+                    <div>
                         <!-- Input de Email -->
                         <div class="form-group">
                           <label for="exampleInputEmail1">Email</label>
@@ -247,8 +247,8 @@
                         </div>
 
                         <!-- Botão para realizar login -->
-                        <button type="submit" class="btn btn-primary">Login</button>
-                      </form>
+                        <button type="submit" class="btn btn-primary" id="botaLogin" onclick="confereNomeUsuario()">Login</button>
+                      </div>
                 </div>
             </div>
         </div>
@@ -266,28 +266,28 @@
                 </div>
                 <div class="modal-body">
                     <!-- Formulario de Cadastro -->
-                    <form>
+                    <div>
                         <!-- Input de Name -->
                         <div class="form-group">
                           <label for="exampleInputName">Name:</label>
-                          <input type="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Entre com seu Nome">
+                          <input type="name" class="form-control" id="exampleInputName2" aria-describedby="emailHelp" placeholder="Entre com seu Nome">
                         </div>
 
                         <!-- Input de Email -->
                         <div class="form-group">
                             <label for="exampleInputEmail">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Entre com seu email">
+                            <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Entre com seu email">
                           </div>
 
                         <!-- Input de Password -->
                         <div class="form-group">
                           <label for="exampleInputPassword">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
                         </div>
 
                         <!-- Botão para realizar Cadastro -->
-                        <button type="submit" class="btn btn-primary">Cadastro</button>
-                      </form>
+                        <button type="submit" class="btn btn-primary" onclick="adicionarNovoCadastro()">Cadastro</button>
+                      </div>
                 </div>
             </div>
         </div>

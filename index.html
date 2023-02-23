@@ -81,7 +81,7 @@
 
         <div class="col-lg-6">
             <!-- Formulário do produto -->
-          <form>
+          <form class="form-product">
             <!-- Preço  -->
             <div class="form-group price_elem row">
               <label class="col-sm-3 col-md-3 form-control-label nopaddingtop"
@@ -134,7 +134,7 @@
               <div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-3">
 
                 <!-- Botão para adicionar ao carrinho -->
-                <button class="btn btn-primary">
+                <button id="add-to-shopping-cart" class="btn btn-primary">
                     Adicionar ao Carrinho
                 </button>
 
@@ -233,21 +233,21 @@
                 </div>
                 <div class="modal-body">
                     <!-- Formulario de Login -->
-                    <form>
+                    <form class="form-login">
                         <!-- Input de Email -->
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre com seu email">
+                          <label for="loginEmail1">Email</label>
+                          <input type="email" class="form-control" id="loginEmail1" aria-describedby="emailHelp" placeholder="Entre com seu email">
                         </div>
 
                         <!-- Input de Password -->
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <label for="loginPassword1">Password</label>
+                          <input type="password" class="form-control" id="loginPassword" placeholder="Password">
                         </div>
 
                         <!-- Botão para realizar login -->
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button id="login" type="submit" class="btn btn-primary">Login</button>
                       </form>
                 </div>
             </div>
@@ -266,27 +266,27 @@
                 </div>
                 <div class="modal-body">
                     <!-- Formulario de Cadastro -->
-                    <form>
+                    <form class="form-register">
                         <!-- Input de Name -->
                         <div class="form-group">
-                          <label for="exampleInputName">Name:</label>
-                          <input type="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Entre com seu Nome">
+                          <label for="registerName">Name:</label>
+                          <input type="name" class="form-control" id="registerName" aria-describedby="emailHelp" placeholder="Entre com seu Nome">
                         </div>
 
                         <!-- Input de Email -->
                         <div class="form-group">
-                            <label for="exampleInputEmail">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Entre com seu email">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" placeholder="Entre com seu email">
                           </div>
 
                         <!-- Input de Password -->
                         <div class="form-group">
-                          <label for="exampleInputPassword">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <label for="registerPassword">Password</label>
+                          <input type="password" class="form-control" id="registerPassword" placeholder="Password">
                         </div>
 
                         <!-- Botão para realizar Cadastro -->
-                        <button type="submit" class="btn btn-primary">Cadastro</button>
+                        <button id="cadastrar" type="submit" class="btn btn-primary">Cadastro</button>
                       </form>
                 </div>
             </div>
@@ -311,26 +311,23 @@
                           <div class="row">
                             <div class="col">
                                 <img
-                                    id="first-image"
-                                    src="https://cdnx.jumpseller.com/bootstrap/image/429444/resize/540/675?1614272621"
-                                    srcset="
-                                        https://cdnx.jumpseller.com/bootstrap/image/429444/resize/540/675?1614272621   1x,
-                                        https://cdnx.jumpseller.com/bootstrap/image/429444/resize/1080/1350?1614272621 2x
-                                    "
-                                    alt="Wacom Bamboo Tablet"
+                                    id="first-image-cart"
+                                    src="shopping-cart-empty.png"
+                                    
+                                    alt="Shooping cart empty"
                                     class="img-fluid"
                                 />
                             </div>
                             <div class="col">
-                                <h5 class="card-title">Nome do Produto</h5>
+                                <h5 class="card-title"></h5>
                                 <p class="card-text">
-                                  Preço: <b>R$ 150,00</b>
+                                  Preço: <b class="price-product-cart"></b>
                                 </p>
                                 <p class="card-text">
-                                  Quantidade: <b>1</b>
+                                  Quantidade: <b class="quantity-product-cart"></b>
                                 </p>
                                 <p class="card-text">
-                                  Cor: <b>Preto</b>
+                                  Cor: <b class="color-product-cart"></b>
                                 </p></div>
                           </div>
                         </div>

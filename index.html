@@ -50,7 +50,7 @@
       <!-- Page Heading -->
       <div class="row">
         <div class="col-12">
-          <h1 class="page-header">Wacom Bamboo Tablet</h1>
+          <h1  class="page-header" id="nomeProduto">Wacom Bamboo Tablet</h1>
         </div>
       </div>
       <!-- /.row -->
@@ -88,8 +88,8 @@
                 >Preço:</label
               >
               <div class="col-sm-8 col-md-9">
-                <span class="product-form-price" id="product-form-price"
-                  >R$ 150,00</span
+                R$<span class="product-form-price" id="product-form-price"
+                  > 150,00</span
                 >
               </div>
             </div>
@@ -117,7 +117,7 @@
                 >Color:</label
               >
               <div class="col-sm-8 col-md-9">
-                <select class="form-control prod-options">
+                <select id="cor" class="form-control prod-options">
                   <option value="cinza">
                     Cinza
                   </option>
@@ -134,7 +134,7 @@
               <div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-3">
 
                 <!-- Botão para adicionar ao carrinho -->
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" onclick="adcionarProduto()">
                     Adicionar ao Carrinho
                 </button>
 
@@ -247,7 +247,7 @@
                         </div>
 
                         <!-- Botão para realizar login -->
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" onclick="fazerLogin()" class="btn btn-primary">Login</button>
                       </form>
                 </div>
             </div>
@@ -282,11 +282,11 @@
                         <!-- Input de Password -->
                         <div class="form-group">
                           <label for="exampleInputPassword">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
                         </div>
 
                         <!-- Botão para realizar Cadastro -->
-                        <button type="submit" class="btn btn-primary">Cadastro</button>
+                        <button type="submit" onclick="cadastrarUsuario()" class="btn btn-primary">Cadastro</button>
                       </form>
                 </div>
             </div>
@@ -310,28 +310,31 @@
                         <div class="card-body">
                           <div class="row">
                             <div class="col">
-                                <img
-                                    id="first-image"
-                                    src="https://cdnx.jumpseller.com/bootstrap/image/429444/resize/540/675?1614272621"
-                                    srcset="
-                                        https://cdnx.jumpseller.com/bootstrap/image/429444/resize/540/675?1614272621   1x,
-                                        https://cdnx.jumpseller.com/bootstrap/image/429444/resize/1080/1350?1614272621 2x
-                                    "
+                              <!-- Texto exibido quando o carrinho estiver vazio -->
+                              <p id="infoCarrinhoVazio" style="text-align: center;"> <em>Adicione itens ao seu carrinho...</em></p>
+                                <!-- imagem exibida quando o carrinho estiver vazio -->
+                              <img
+                                id="first-image1"
+                                    src="img/02june22_basket_icon_04-removebg-preview.png"
+                                    
                                     alt="Wacom Bamboo Tablet"
                                     class="img-fluid"
                                 />
                             </div>
-                            <div class="col">
-                                <h5 class="card-title">Nome do Produto</h5>
+                            <!--(#info) nova div criada para alterar o tipo de display do carrinho -->
+                            <div id="info" class="info">
+                              <div class="col">
+                                <h5 class="card-title" id="nomeProduto1"></h5>
                                 <p class="card-text">
-                                  Preço: <b>R$ 150,00</b>
+                                  Preço: <b id="precoProduto"></b>
                                 </p>
                                 <p class="card-text">
-                                  Quantidade: <b>1</b>
+                                  Quantidade: <b id="quantidadeProduto"></b>
                                 </p>
                                 <p class="card-text">
-                                  Cor: <b>Preto</b>
+                                  Cor: <b id="corProduto"></b>
                                 </p></div>
+                            </div>
                           </div>
                         </div>
                       </div>

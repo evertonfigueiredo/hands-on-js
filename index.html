@@ -81,7 +81,7 @@
 
         <div class="col-lg-6">
             <!-- Formulário do produto -->
-          <form>
+          <div>
             <!-- Preço  -->
             <div class="form-group price_elem row">
               <label class="col-sm-3 col-md-3 form-control-label nopaddingtop"
@@ -117,7 +117,7 @@
                 >Color:</label
               >
               <div class="col-sm-8 col-md-9">
-                <select class="form-control prod-options">
+                <select id="select-color" class="form-control prod-options">
                   <option value="cinza">
                     Cinza
                   </option>
@@ -161,7 +161,7 @@
                 <p>Marca: Wacom</p>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -233,22 +233,22 @@
                 </div>
                 <div class="modal-body">
                     <!-- Formulario de Login -->
-                    <form>
+                    <div>
                         <!-- Input de Email -->
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre com seu email">
+                          <label for="loginInputEmail">Email</label>
+                          <input type="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp" placeholder="Entre com seu email">
                         </div>
 
                         <!-- Input de Password -->
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <label for="loginInputPassword">Password</label>
+                          <input type="password" class="form-control" id="loginInputPassword" placeholder="Password">
                         </div>
 
                         <!-- Botão para realizar login -->
                         <button type="submit" class="btn btn-primary">Login</button>
-                      </form>
+                      </div>
                 </div>
             </div>
         </div>
@@ -266,28 +266,28 @@
                 </div>
                 <div class="modal-body">
                     <!-- Formulario de Cadastro -->
-                    <form>
+                    <div>
                         <!-- Input de Name -->
                         <div class="form-group">
-                          <label for="exampleInputName">Name:</label>
-                          <input type="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Entre com seu Nome">
+                          <label for="cadInputName">Name:</label>
+                          <input type="name" class="form-control" id="cadInputName" aria-describedby="nameHelp" placeholder="Entre com seu Nome">
                         </div>
 
                         <!-- Input de Email -->
                         <div class="form-group">
-                            <label for="exampleInputEmail">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Entre com seu email">
+                            <label for="cadInputEmail">Email</label>
+                            <input type="email" class="form-control" id="cadInputEmail" aria-describedby="emailHelp" placeholder="Entre com seu email">
                           </div>
 
                         <!-- Input de Password -->
                         <div class="form-group">
-                          <label for="exampleInputPassword">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <label for="cadInputPassword">Password</label>
+                          <input type="password" class="form-control" id="cadInputPassword" placeholder="Password">
                         </div>
 
                         <!-- Botão para realizar Cadastro -->
                         <button type="submit" class="btn btn-primary">Cadastro</button>
-                      </form>
+                      </div>
                 </div>
             </div>
         </div>
@@ -309,18 +309,6 @@
                     <div class="card">
                         <div class="card-body">
                           <div class="row">
-                            <div class="col">
-                                <img
-                                    id="first-image"
-                                    src="https://cdnx.jumpseller.com/bootstrap/image/429444/resize/540/675?1614272621"
-                                    srcset="
-                                        https://cdnx.jumpseller.com/bootstrap/image/429444/resize/540/675?1614272621   1x,
-                                        https://cdnx.jumpseller.com/bootstrap/image/429444/resize/1080/1350?1614272621 2x
-                                    "
-                                    alt="Wacom Bamboo Tablet"
-                                    class="img-fluid"
-                                />
-                            </div>
                             <div class="col">
                                 <h5 class="card-title">Nome do Produto</h5>
                                 <p class="card-text">

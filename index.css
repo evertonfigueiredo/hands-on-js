@@ -1050,3 +1050,9 @@ body {
     color: #222222;
   }
   .toast, .toast-success {background-color: #28a745;}
+
+  /* carla */
+  .saudacao{
+    font-size: 1.5rem;
+    color: white;
+  }

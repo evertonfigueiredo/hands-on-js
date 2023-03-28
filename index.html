@@ -50,7 +50,7 @@
       <!-- Page Heading -->
       <div class="row">
         <div class="col-12">
-          <h1 class="page-header">Wacom Bamboo Tablet</h1>
+          <h1 class="page-header" id="titulo-produto">Wacom Bamboo Tablet</h1>
         </div>
       </div>
       <!-- /.row -->
@@ -134,7 +134,7 @@
               <div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-3">
 
                 <!-- Botão para adicionar ao carrinho -->
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" onclick="adicionarCarrinho()">
                     Adicionar ao Carrinho
                 </button>
 
@@ -247,7 +247,7 @@
                         </div>
 
                         <!-- Botão para realizar login -->
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary" onclick="Login()">Login</button>
                       </div>
                 </div>
             </div>
@@ -286,7 +286,7 @@
                         </div>
 
                         <!-- Botão para realizar Cadastro -->
-                        <button type="submit" class="btn btn-primary">Cadastro</button>
+                        <button type="submit" onclick="formCadastro()" class="btn btn-primary">Cadastro</button>
                       </div>
                 </div>
             </div>
@@ -303,10 +303,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-
+                <div class="modal-body" id="div-carrinho">
+                    Carrinho Vazio!!
                     <!-- Card de cada produto no carrinho  -->
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-body">
                           <div class="row">
                             <div class="col">
@@ -322,7 +322,7 @@
                                 </p></div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                       <!-- Fim do card -->
                 </div>
                 <div class="modal-footer">

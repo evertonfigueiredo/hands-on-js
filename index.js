@@ -7,11 +7,16 @@ function formCadastro() {
     let password = document.querySelector("#exampleInputPassword").value
 
     let user = {
-        name,
-        email,
-        password
+        name: name.value,
+        email: email.value,
+        password: password.value
     }
+
+    name.value = ''
+    email.value = ''
+    password.value = ''
 
     usuarios.push(user)
     console.log(usuarios);
 }
+

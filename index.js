@@ -24,6 +24,7 @@ function formCadastro() {
 // 2
 
 function validarCadastro() {
+
     let email = document.querySelector("#loginInputEmail").value
     let password = document.querySelector("#loginInputPassword").value
     let name = ''
@@ -37,10 +38,22 @@ function validarCadastro() {
     console.log(name)
 }
 
-validarCadastro()
+// 3
 
+let produtos = []
 
-// 
-function adicionarItem() {
+function adicionarProdutos() {
 
+    let price = document.querySelector("#product-form-price").value
+    let quantity = document.querySelector("#input-qty").value
+    let color = document.querySelector("#select-color").value
+
+    let produto = {
+        price,
+        quantity,
+        color
+    }
+
+    produtos.push(produto)
+    console.log(produtos);
 }

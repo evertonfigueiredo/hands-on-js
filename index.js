@@ -1,5 +1,6 @@
 let usuarios = []
 let carrinho = []
+let totalCarrinho = 0
 
 function formCadastro() {
     let nome = document.querySelector("#cadInputName").value
@@ -60,20 +61,24 @@ function adicionarProdutos() {
     let preco = document.querySelector("#product-form-price").textContent
     let quantidade = document.querySelector("#input-qty").value
     let cor = document.querySelector("#select-color").value
+    console.log(preco)
+    let total = preco * quantidade
 
     let produto = {
         titulo,
         preco,
         quantidade,
-        cor
+        cor,
+        total
     }
+    totalCarrinho += total
     carrinho.push(produto)
     console.log(carrinho);
-    exibirCarrinho()
+    exibirCarrinho(totalCarrinho)
 }
 
 
-function exibirCarrinho() {
+function exibirCarrinho(totalCarrinho) {
     let cardCarrinho = document.querySelector("#cardConteudo")
     cardCarrinho.textContent = ""
 
@@ -91,9 +96,15 @@ function exibirCarrinho() {
                                                 </p>
                                                 <p class="card-text">
                                                 Cor: <b>${produto.cor}</b>
+                                                </p>
+                                                <p class="card-text">
+                                                Cor: <b>${produto.total}</b>
                                                 </p></div>
                                         </div>
-                                        </div>
-                                    </div>`;
+                                        </div>                                       
+                                    </div>
+                                    <div><p class="card-text">
+                                    Valor Total: <b>${totalCarrinho}</b>
+                                    </p></div>`;
     })
 }

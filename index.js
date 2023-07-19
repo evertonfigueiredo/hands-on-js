@@ -13,7 +13,7 @@ class Item {
     constructor(nome, preco, qtd, cor) {
         this.nome = nome,
         this.preco = preco,
-        this.qtd = quantidade,
+        this.qtd = qtd,
         this.cor = cor
     }
 }
@@ -49,6 +49,22 @@ function consultarUsuario() {
         }
     }
 }
+
+function adicionarCarrinho() {
+    let nome = document.querySelector(".page-header").innerText;
+    let preco = document.querySelector(".product-form-price").innerText;
+    let qtd = document.querySelector(".qty").value;
+    let cor = document.querySelector("#select-color").value;
+
+    let item = new Item(nome, preco, qtd, cor);
+    carrinho.push(item);
+
+    // atualizarCarrinho();
+}
+
+// function atualizarCarrinho() {
+
+// }
 
 const buttons = document.querySelectorAll('button')
 let botaoCadastro

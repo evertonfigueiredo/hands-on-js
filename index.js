@@ -1,19 +1,47 @@
 let usuarios = []
 
+
 //let cart = [] -> vai receber os objetos da função addItem()
 
 //1 - Crie uma função que pegue os valores do formulário de cadastro e adicione em um array um objeto para ser acesso posteriormente.
+function clearContent(){
+    document.querySelector("#cadSubmit").setAttribute("data-dismiss", "")
+    let nameInput = document.querySelector("#cadInputName")
+    let emailInput = document.querySelector("#cadInputEmail")
+    let passwordInput = document.querySelector("#cadInputPassword")
+    nameInput.value = ""
+    emailInput.value = ""
+    passwordInput.value = ""
+}
 
 function registerUser(){
-    let name = document.querySelector("#cadInputName").value
-    let email = document.querySelector("#cadInputEmail").value
-    let password = document.querySelector("#cadInputPassword").value
-    let newUser = {
-        name: name,
-        email: email,
-        password: password
+    let nameInput = document.querySelector("#cadInputName")
+    let emailInput = document.querySelector("#cadInputEmail")
+    let passwordInput = document.querySelector("#cadInputPassword")
+    let name = nameInput.value
+    let email = emailInput.value
+    let password = passwordInput.value
+    let findEmail = usuarios.find(user => user.email === email)
+    if(findEmail){
+        alert("Email já cadastrado! Tente novamente.")
+        return
     }
-    usuarios.push(newUser)
+    if(name && email && password){
+        let newUser = {
+            name: name,
+            email: email,
+            password: password
+        }
+        usuarios.push(newUser)
+        alert("Cadastro realizado com sucesso!")
+        document.querySelector("#cadSubmit").setAttribute("data-dismiss", "modal")
+        return
+    }else{
+        alert ("Cadastro não realizado. Todos os campos devem ser preenchidos!")
+        nameInput.value = ""
+        emailInput.value = ""
+        passwordInput.value = ""
+    }
 }
 
 let submit = document.querySelector("#cadSubmit")

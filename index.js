@@ -1,29 +1,29 @@
 let usuarios = []
+let cart = []
+const nameCad = document.querySelector("#cadInputName")
+const emailCad = document.querySelector("#cadInputEmail")
+const passwordCad = document.querySelector("#cadInputPassword")
+const submitBtn = document.querySelector("#cadSubmit")
+const loginBtn = document.querySelector("#btnLogin")
+const emailLogin = document.querySelector("#loginInputEmail")
+const passwordLogin = document.querySelector("#loginInputPassword")
+const nameCart = document.querySelector("#itemName")
+const priceCart = document.querySelector("#product-form-price")
+const qtyCart = document.querySelector("#input-qty")
+const colorCart = document.querySelector("#select-color")
 
 
-//let cart = [] -> vai receber os objetos da função addItem()
 
 //1 - Crie uma função que pegue os valores do formulário de cadastro e adicione em um array um objeto para ser acesso posteriormente.
-function clearContent(){
-    document.querySelector("#cadSubmit").setAttribute("data-dismiss", "")
-    let nameInput = document.querySelector("#cadInputName")
-    let emailInput = document.querySelector("#cadInputEmail")
-    let passwordInput = document.querySelector("#cadInputPassword")
-    nameInput.value = ""
-    emailInput.value = ""
-    passwordInput.value = ""
-}
 
 function registerUser(){
-    let nameInput = document.querySelector("#cadInputName")
-    let emailInput = document.querySelector("#cadInputEmail")
-    let passwordInput = document.querySelector("#cadInputPassword")
-    let name = nameInput.value
-    let email = emailInput.value
-    let password = passwordInput.value
+    let name = nameCad.value
+    let email = emailCad.value
+    let password = passwordCad.value
     let findEmail = usuarios.find(user => user.email === email)
     if(findEmail){
         alert("Email já cadastrado! Tente novamente.")
+        submitBtn.removeAttribute("data-dismiss", "modal")
         return
     }
     if(name && email && password){
@@ -34,13 +34,14 @@ function registerUser(){
         }
         usuarios.push(newUser)
         alert("Cadastro realizado com sucesso!")
-        document.querySelector("#cadSubmit").setAttribute("data-dismiss", "modal")
+        submitBtn.setAttribute("data-dismiss", "modal")
+        nameCad.value = ""
+        emailCad.value = ""
+        passwordCad.value = ""
         return
     }else{
         alert ("Cadastro não realizado. Todos os campos devem ser preenchidos!")
-        nameInput.value = ""
-        emailInput.value = ""
-        passwordInput.value = ""
+        submitBtn.removeAttribute("data-dismiss", "modal")
     }
 }
 
@@ -50,16 +51,31 @@ submit.addEventListener("click",registerUser)
 //2 - Com base no tópico anterior crie uma função que acesse o array criado e com o email e senha passado no formulário de login retorne o nome do usuário cadastrado.
 
 function userAuth(){
-    let email = document.querySelector("#loginInputEmail").value
-    let password = document.querySelector("#loginInputPassword").value
-    let findEmail = usuarios.find(user => user.email === email)
-    let findPassword = usuarios.find(user => user.password === password)
-    if(findEmail && findPassword){
-        console.log(findEmail.name)
+    let email = emailLogin.value
+    let password = passwordLogin.value
+    let findUser = usuarios.find(user => user.email === email)
+    if(findUser === undefined){
+        alert("Email ou senha incorretos, tente novamente!")
+        loginBtn.removeAttribute("data-dismiss", "modal")
+        emailLogin.value = ""
+        passwordLogin.value = ""
+        return
     }
-    if(!findEmail || !findPassword){
-        console.log("Usuário não cadastrado!")
+    if(findUser.password !== password){
+        alert("Email ou senha incorretos, tente novamente!")
+        loginBtn.removeAttribute("data-dismiss", "modal")
+        emailLogin.value = ""
+        passwordLogin.value = ""
+        return
     }
+    if(findUser){
+        alert("Bem vindo, " + findUser.name + " !")
+        loginBtn.setAttribute("data-dismiss", "modal")
+        emailLogin.value = ""
+        passwordLogin.value = ""
+        return
+    }
+
 }
 let login = document.querySelector("#btnLogin")
 login.addEventListener("click",userAuth)
@@ -68,18 +84,23 @@ login.addEventListener("click",userAuth)
 //     Obs.: Você deve criar um array para armazenar os dados do produto e logo em seguida mostrar o array na lista do carrinho.
 
 function addItem(){
-    let items = []
-    let itemName = document.querySelector("#itemName").textContent
-    let itemPrice = document.querySelector("#product-form-price").textContent
-    let itemQuantity = document.querySelector("#input-qty").value
-    let itemColor = document.querySelector("#select-color").value
-
-    // Cria um objeto com os produtos, insere tudo que for selecionado no objeto e depois da push na array
-
-    // items.push(itemName, itemPrice, itemQuantity, itemColor)
-    // document.querySelector(".card-title").textContent = itemName
-    // document.querySelector("#itemQuantity").textContent = Number(itemQuantity)
-    // document.querySelector("#itemColor").textContent.toUpperCase = itemColor
+    let itemName = nameCart.textContent
+    let itemPrice = priceCart.textContent
+    let itemQuantity = Number(qtyCart.value)
+    let itemColor = colorCart.value
+    let findItem = cart.find(item => item.itemName === itemName && item.itemColor === itemColor);
+    if (findItem){
+        findItem.itemQuantity += itemQuantity;
+    } else {
+        let item = {
+            itemName: itemName,
+            itemPrice: itemPrice,
+            itemQuantity: itemQuantity,
+            itemColor: itemColor
+            }
+            cart.push(item)
+    }
+    console.log(cart)
 }
 
 let addCart = document.querySelector("#addCart")

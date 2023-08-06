@@ -1050,3 +1050,12 @@ body {
     color: #222222;
   }
   .toast, .toast-success {background-color: #28a745;}
+
+  .row-cart{
+    flex-direction: column;
+  }
+
+  .card-text span{
+    font-weight: 700;
+    text-transform: capitalize;
+  }
